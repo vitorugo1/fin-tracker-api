@@ -7,6 +7,6 @@ router = APIRouter()
 dat = yf.Ticker("PETR4.SA")
 
 
-@router.get('/finances', status_code=204)
-async def read_root():
-    return {df_to_json(dat.history(period='1mo'))}
+@router.get('/finances')
+def read_root():
+    return df_to_json(dat.history(period='1mo'))
