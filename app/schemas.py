@@ -10,7 +10,7 @@ class ChartDataPoint(BaseModel):
 class AssetData(BaseModel):
     # ID
     ticker: str = Field(..., description="Asset ticker")
-    ticker: str = Field(..., description="Asset name")
+    name: str = Field(..., description="Asset name")
     currency: str = Field(..., description="Currency price (ex: BRL, USD)")
     logo_url: str | None = Field(..., description="")
 

@@ -1,12 +1,11 @@
 from fastapi import APIRouter
-from utils import df_to_json
-import yfinance as yf
+from .services import get_asset_details
 
 
 router = APIRouter()
-dat = yf.Ticker("PETR4.SA")
+dat = "PETR4.SA"
 
 
 @router.get('/finances')
-def read_root():
-    return df_to_json(dat.history(period='1mo'))
+async def read_root():
+    return get_asset_details("PETR4.SA")

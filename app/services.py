@@ -41,11 +41,11 @@ def get_asset_details(ticker_symbol: str) -> schemas.AssetData:
             currency=info.get('currency', 'N/A'),
             logo_url=info.get('logo_url', None),
             current_price=current_price,
-            day_change_percent=day_change,
+            day_change_percentage=day_change,
             six_month_chart=chart_points
         )
         
         return asset_data
 
     except Exception as e:
-        raise ValueError(f"Unable to fetch data for current ticker: {ticker_symbol}")
+        raise ValueError(f"Unable to fetch data for current ticker: {ticker_symbol} {e}")
