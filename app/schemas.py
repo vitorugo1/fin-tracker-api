@@ -22,4 +22,5 @@ class AssetData(BaseModel):
     six_month_chart: list[ChartDataPoint]
 
     class Config:
-        orm_mode = True
+        from_attributes = True
+
